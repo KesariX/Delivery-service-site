@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Partner Recruitment — KesariX Delivery Club</title>
+  <meta name="description" content="Join the KesariX Delivery Club as a delivery partner. Flexible hours, weekly payouts and fuel allowance across Gujarat & Maharashtra. Apply in under 2 minutes." />
+  <meta name="theme-color" content="#08080c" />
+  <link rel="icon" href="site-logo.ico" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Become a Delivery Partner — KesariX Delivery Club" />
+  <meta property="og:description" content="Earn on your own schedule. Now hiring delivery partners across 10 cities." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google AdSense (replace ca-pub-XXXX with your publisher ID before publishing) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6500;
+      --orange-light: #FF8534;
+      --amber: #FFB347;
+      --blue: #2b74d6;
+      --blue-light: #4d94ff;
+      --bg: #07070b;
+      --bg-card: #10101a;
+      --bg-input: #15151f;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --text: #f4f4f6;
+      --text-muted: #8f8fa2;
+      --green: #22c55e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ── Animated aurora background ── */
+    .aurora {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .aurora span {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.55;
+      mix-blend-mode: screen;
+    }
+    .aurora .a1 {
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(255,101,0,0.55), transparent 68%);
+      top: -140px; right: -120px;
+      animation: drift1 20s ease-in-out infinite;
+    }
+    .aurora .a2 {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(43,116,214,0.45), transparent 70%);
+      bottom: -160px; left: -100px;
+      animation: drift2 26s ease-in-out infinite;
+    }
+    .aurora .a3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,140,40,0.30), transparent 70%);
+      top: 40%; left: 55%;
+      animation: drift3 22s ease-in-out infinite;
+    }
+    @keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-60px,50px) scale(1.12)} }
+    @keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(70px,-40px) scale(1.15)} }
+    @keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-50px,-60px) scale(0.9)} }
+
+    /* Stars */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 25%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 70%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 75%, rgba(255,255,255,0.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 90%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 65% 5%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 45%, rgba(255,255,255,0.25) 0%, transparent 100%);
+    }
+
+    /* ── Layout wrappers ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(7,7,11,0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+
+    .logo img {
+      width: 40px; height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 12px rgba(255,101,0,0.45));
+    }
+
+    .logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .logo-text small {
+      display: block;
+      font-size: 8.5px;
+      letter-spacing: 0.3em;
+      color: var(--orange);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+
+    .nav-link {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text); }
+
+    .nav-badge {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 11px; letter-spacing: 0.09em; color: var(--green);
+      text-transform: uppercase; font-weight: 600;
+      border: 1px solid rgba(34,197,94,0.3);
+      background: rgba(34,197,94,0.06);
+      border-radius: 100px; padding: 6px 13px;
+    }
+    .nav-badge::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 10px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.35;transform:scale(0.8)} }
+
+    /* ── Hero section ── */
+    .hero { padding: 44px 40px 26px; max-width: 1100px; margin: 0 auto; width: 100%; }
+
+    .hero-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-muted); font-weight: 600; padding-bottom: 30px;
+    }
+    .hero-meta .avail { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta .avail::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 10px var(--green);
+    }
+
+    .hero-inner { text-align: center; max-width: 920px; margin: 0 auto; position: relative; }
+
+    /* glow behind title */
+    .hero-inner::before {
+      content: ''; position: absolute;
+      top: 30%; left: 50%; transform: translateX(-50%);
+      width: 620px; height: 340px; max-width: 90vw;
+      background: radial-gradient(ellipse at center, rgba(255,101,0,0.22), transparent 65%);
+      filter: blur(40px); z-index: -1; pointer-events: none;
+    }
+
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--amber); font-weight: 600;
+      border: 1px solid rgba(255,101,0,0.4);
+      background: rgba(255,101,0,0.06);
+      border-radius: 100px; padding: 6px 15px; margin-bottom: 28px;
+    }
+    .hero-label::before {
+      content: ''; width: 6px; height: 6px; background: var(--orange);
+      border-radius: 50%; box-shadow: 0 0 10px var(--orange);
+    }
+
+    .hero-title { font-weight: 900; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 24px; }
+
+    .hero-title .line-sm {
+      display: block; font-size: clamp(18px, 3vw, 30px); font-weight: 600;
+      letter-spacing: 0.04em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;
+    }
+    .hero-title .serif {
+      display: block; font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic; font-weight: 400;
+      font-size: clamp(48px, 9.5vw, 112px); line-height: 0.92;
+      background: linear-gradient(180deg, #fff 15%, var(--amber) 70%, var(--orange) 115%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 30px rgba(255,101,0,0.35));
+    }
+    .hero-title .outline {
+      display: block; font-size: clamp(34px, 6.5vw, 76px);
+      color: transparent; -webkit-text-stroke: 1.5px rgba(255,131,52,0.7);
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      font-size: 16px; color: var(--text-muted); max-width: 570px;
+      margin: 0 auto; line-height: 1.65;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
+    .hero-perks {
+      display: flex; align-items: center; justify-content: center;
+      gap: 26px; margin-top: 28px; flex-wrap: wrap;
+    }
+    .perk { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); font-weight: 500; }
+    .perk-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+
+    /* ── Marquee ribbon ── */
+    .ribbon {
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: linear-gradient(90deg, rgba(255,101,0,0.05), rgba(43,116,214,0.05));
+      overflow: hidden; padding: 13px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .ribbon-track { display: inline-flex; align-items: center; white-space: nowrap; animation: marquee 32s linear infinite; }
+    .ribbon-track span {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-muted); padding: 0 26px;
+    }
+    .ribbon-track span b { color: var(--amber); font-weight: 700; }
+    .ribbon-track .star { color: var(--orange); }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ── Ad banner ── */
+    .ad-top { width: 100%; display: flex; align-items: center; justify-content: center; padding: 26px 16px 0; }
+    .ad-slot {
+      background: rgba(255,101,0,0.03); border: 1px dashed rgba(255,101,0,0.16);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      color: rgba(143,143,162,0.55); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 500; overflow: hidden;
+    }
+    .ad-slot-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-slot-rect { width: 300px; height: 250px; }
+    .ad-slot-footer { width: 728px; max-width: 100%; height: 90px; }
+
+    /* ── Main layout ── */
+    .main {
+      display: grid; grid-template-columns: 1fr 330px; gap: 32px;
+      max-width: 1100px; margin: 40px auto 60px; padding: 0 24px;
+      width: 100%; align-items: start;
+    }
+
+    /* ── Cards shared ── */
+    .form-card, .side-card {
+      background: linear-gradient(180deg, rgba(22,22,34,0.9), var(--bg-card));
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .side-card:hover { transform: translateY(-3px); border-color: rgba(255,101,0,0.28); box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
+
+    /* ── Form card ── */
+    .form-card { padding: 40px; position: relative; overflow: hidden; }
+    .form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--orange), var(--amber), transparent);
+    }
+
+    .form-heading { font-size: 24px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
+    .form-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+    .input-wrap { position: relative; }
+    .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 15px; pointer-events: none; opacity: 0.8; }
+
+    input, select {
+      width: 100%; background: var(--bg-input);
+      border: 1px solid var(--border-subtle); border-radius: 10px;
+      padding: 13px 14px 13px 42px; color: var(--text);
+      font-family: inherit; font-size: 14px; font-weight: 500;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a8a9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+    }
+    select option { background: #1a1a2e; color: var(--text); }
+    input:focus, select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,101,0,0.14); }
+    input::placeholder { color: rgba(143,143,162,0.5); }
+    .age-input { padding-left: 14px; }
+
+    /* ── Consent ── */
+    .consent {
+      display: flex; align-items: flex-start; gap: 10px; margin-top: 20px;
+      padding: 14px 16px; background: rgba(255,101,0,0.05);
+      border: 1px solid rgba(255,101,0,0.16); border-radius: 10px;
+    }
+    .consent input[type="checkbox"] { width: 16px; height: 16px; min-width: 16px; padding: 0; cursor: pointer; accent-color: var(--orange); margin-top: 2px; }
+    .consent p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .consent a { color: var(--amber); text-decoration: none; }
+    .consent a:hover { text-decoration: underline; }
+
+    /* ── Submit button ── */
+    .btn-submit {
+      width: 100%; margin-top: 22px; padding: 15px 24px;
+      background: linear-gradient(100deg, var(--orange), var(--orange-light));
+      color: #fff; font-family: inherit; font-size: 14px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; border: none;
+      border-radius: 12px; cursor: pointer; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(255,101,0,0.4);
+    }
+    .btn-submit::after {
+      content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); animation: shine 3.5s ease-in-out infinite;
+    }
+    @keyframes shine { 0%{left:-60%} 45%,100%{left:130%} }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255,101,0,0.55); }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit:disabled { opacity: 0.75; cursor: wait; }
+    .btn-arrow { font-size: 16px; position: relative; z-index: 1; }
+
+    .form-note { margin-top: 14px; text-align: center; font-size: 11px; color: rgba(143,143,162,0.7); letter-spacing: 0.03em; }
+    .form-error { display: none; margin-top: 12px; text-align: center; font-size: 12px; color: #ff6b6b; }
+
+    /* ── Success overlay ── */
+    .success-msg { display: none; text-align: center; padding: 40px 20px; }
+    .success-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; color: var(--green); margin: 0 auto 18px;
+      box-shadow: 0 0 30px rgba(34,197,94,0.25);
+    }
+    .success-msg h3 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+    .success-msg p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Sidebar ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .side-card { padding: 22px; }
+    .side-card h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+
+    .benefit-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .benefit-icon {
+      width: 28px; height: 28px; min-width: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255,101,0,0.22), rgba(255,140,40,0.1));
+      border: 1px solid rgba(255,101,0,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 13px;
+    }
+
+    .stats-row { display: flex; flex-direction: column; gap: 14px; }
+    .stat { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle); }
+    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-label { font-size: 12px; color: var(--text-muted); }
+    .stat-val {
+      font-size: 20px; font-weight: 800;
+      background: linear-gradient(180deg, var(--amber), var(--orange));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .ad-side { display: flex; align-items: center; justify-content: center; padding: 4px; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border-subtle); background: rgba(7,7,11,0.9); padding: 44px 40px 26px; }
+    .footer-ad { display: flex; align-items: center; justify-content: center; margin-bottom: 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 36px; max-width: 1100px; margin: 0 auto 34px; }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-tag { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 270px; }
+    .footer-tag strong { display: block; color: var(--text); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; margin-bottom: 8px; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col a, .footer-col span { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--amber); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 22px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-copy { font-size: 11px; letter-spacing: 0.05em; color: rgba(143,143,162,0.55); text-transform: uppercase; }
+    .footer-copy span { color: var(--orange); }
+    .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal a { font-size: 11px; letter-spacing: 0.05em; color: rgba(143,143,162,0.55); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--amber); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+      .ad-side { grid-column: 1 / -1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      .nav-right { gap: 12px; }
+      .nav-link { display: none; }
+      .hero { padding: 30px 20px 20px; }
+      .hero-meta { font-size: 9px; letter-spacing: 0.14em; }
+      .form-card { padding: 28px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: 1; }
+      .sidebar { grid-template-columns: 1fr; }
+      .main { padding: 0 16px; margin-top: 24px; }
+      footer { padding: 32px 20px 22px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .aurora span, .ribbon-track, .btn-submit::after, .nav-badge::before { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+<div class="stars"></div>
+
+<div class="page-wrap" id="top">
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#top" class="logo" aria-label="KesariX Delivery Club home">
+      <img src="logo.png" alt="KesariX Delivery Club logo" />
+      <span class="logo-text">KesariX<small>Delivery Club</small></span>
+    </a>
+    <div class="nav-right">
+      <a href="#benefits" class="nav-link">Partner Benefits</a>
+      <span class="nav-badge">Now Hiring</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-meta">
+      <span>Based in&nbsp;·&nbsp;Gujarat, India</span>
+      <span class="avail">Now onboarding across 10 cities</span>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-label">Delivery Club · Partner Recruitment 2026</div>
+      <h1 class="hero-title">
+        <span class="line-sm">Ride With The</span>
+        <span class="serif">Delivery Club</span>
+        <span class="outline">Partner Network</span>
+      </h1>
+      <p class="hero-sub">
+        Earn on your own schedule. The KesariX Delivery Club is onboarding delivery partners
+        across major cities in <strong>Gujarat &amp; Maharashtra</strong> — flexible hours, weekly payouts and fuel support.
+      </p>
+      <div class="hero-perks">
+        <div class="perk"><span class="perk-dot"></span> Daily Earnings</div>
+        <div class="perk"><span class="perk-dot"></span> Flexible Hours</div>
+        <div class="perk"><span class="perk-dot"></span> Weekly Payouts</div>
+        <div class="perk"><span class="perk-dot"></span> Fuel Allowance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee ribbon -->
+  <div class="ribbon">
+    <div class="ribbon-track">
+      <span><b>Daily Earnings</b></span><span class="star">✦</span>
+      <span>Weekly Payouts</span><span class="star">✦</span>
+      <span><b>Fuel Allowance</b></span><span class="star">✦</span>
+      <span>Insurance Cover</span><span class="star">✦</span>
+      <span><b>Flexible Shifts</b></span><span class="star">✦</span>
+      <span>Live App Support</span><span class="star">✦</span>
+      <span><b>Performance Bonuses</b></span><span class="star">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span><b>Daily Earnings</b></span><span class="star">✦</span>
+      <span>Weekly Payouts</span><span class="star">✦</span>
+      <span><b>Fuel Allowance</b></span><span class="star">✦</span>
+      <span>Insurance Cover</span><span class="star">✦</span>
+      <span><b>Flexible Shifts</b></span><span class="star">✦</span>
+      <span>Live App Support</span><span class="star">✦</span>
+      <span><b>Performance Bonuses</b></span><span class="star">✦</span>
+    </div>
+  </div>
+
+  <!-- Top leaderboard ad -->
+  <div class="ad-top">
+    <!-- Google AdSense Leaderboard 728×90 — set data-ad-client / data-ad-slot before publishing -->
+    <div class="ad-slot ad-slot-leaderboard">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;max-width:100%;height:90px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <!-- Main grid: form + sidebar -->
+  <main class="main">
+
+    <!-- Form card -->
+    <div class="form-card" id="apply">
+      <div class="form-heading">Apply Now</div>
+      <p class="form-sub">Fill in your details and our onboarding team will contact you within 24 hours.</p>
+
+      <form id="recruitForm" novalidate>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="name">Full Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <div class="input-wrap">
+              <input type="number" id="age" name="age" class="age-input" placeholder="18" min="18" max="55" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contact">Contact Number</label>
+            <div class="input-wrap">
+              <span class="input-icon">📱</span>
+              <input type="tel" id="contact" name="contact" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required autocomplete="tel" maxlength="10" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="city">Select City</label>
+            <div class="input-wrap">
+              <span class="input-icon">📍</span>
+              <select id="city" name="city" required>
+                <option value="" disabled selected>— Choose your city —</option>
+                <option value="Surat">Surat</option>
+                <option value="Vadodara">Vadodara (Baroda)</option>
+                <option value="Bharuch">Bharuch</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Anand">Anand</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Navi Mumbai">Navi Mumbai</option>
+                <option value="Thane">Thane</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="vehicle">Vehicle Type</label>
+            <div class="input-wrap">
+              <span class="input-icon">🏍️</span>
+              <select id="vehicle" name="vehicle" required>
+                <option value="" disabled selected>— Select vehicle —</option>
+                <option value="bicycle">Bicycle</option>
+                <option value="scooter">Scooter / Activa</option>
+                <option value="motorcycle">Motorcycle</option>
+                <option value="electric">Electric Scooter / EV</option>
+                <option value="none">No Vehicle (will rent)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required />
+          <p>
+            I agree to be contacted by the KesariX Delivery Club regarding this application.
+            I confirm the information provided is accurate. By submitting I accept the
+            <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>.
+          </p>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span id="btnLabel">Submit Application</span> <span class="btn-arrow">→</span>
+        </button>
+
+        <p class="form-error" id="formError">Something went wrong. Please try again or call us directly.</p>
+        <p class="form-note">🔒 Your details are secure and used only for onboarding.</p>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">✓</div>
+        <h3>Application Received!</h3>
+        <p>
+          Thank you for applying to the KesariX Delivery Club.<br />
+          Our onboarding team will reach you on your contact number within <strong>24 hours</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="side-card" id="benefits">
+        <h3>Why Join Us?</h3>
+        <ul class="benefit-list">
+          <li><div class="benefit-icon">💰</div><span>Earn ₹20,000–₹35,000/month with performance bonuses</span></li>
+          <li><div class="benefit-icon">⏰</div><span>Flexible shifts — morning, evening or full-day</span></li>
+          <li><div class="benefit-icon">⛽</div><span>Fuel reimbursement on every delivery</span></li>
+          <li><div class="benefit-icon">📦</div><span>Weekly salary + delivery incentives</span></li>
+          <li><div class="benefit-icon">🛡️</div><span>Insurance cover during delivery hours</span></li>
+          <li><div class="benefit-icon">📱</div><span>Easy-to-use delivery app with live support</span></li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h3>By the Numbers</h3>
+        <div class="stats-row">
+          <div class="stat"><span class="stat-label">Active Partners</span><span class="stat-val">1,200+</span></div>
+          <div class="stat"><span class="stat-label">Cities Active</span><span class="stat-val">10</span></div>
+          <div class="stat"><span class="stat-label">Avg. Daily Earnings</span><span class="stat-val">₹1,100</span></div>
+          <div class="stat"><span class="stat-label">Deliveries / Day</span><span class="stat-val">8,000+</span></div>
+        </div>
+      </div>
+
+      <div class="side-card ad-side">
+        <!-- Google AdSense Rectangle 300×250 -->
+        <div class="ad-slot ad-slot-rect">
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:300px;height:250px"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="0987654321"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-ad">
+      <div class="ad-slot ad-slot-footer">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;max-width:100%;height:90px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="1122334455"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <img src="logo.png" alt="KesariX Delivery Club logo" />
+          <span class="logo-text">KesariX<small>Delivery Club</small></span>
+        </a>
+        <p class="footer-tag">
+          <strong>Your City, Delivered.</strong>
+          KesariX Delivery Club — building a reliable last-mile delivery network across India, one partner at a time.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Delivery Club</h4>
+        <ul>
+          <li><a href="#apply">Become a Partner</a></li>
+          <li><a href="#benefits">Partner Benefits</a></li>
+          <li><a href="#apply">Cities We Serve</a></li>
+          <li><a href="#apply">Partner FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#apply">About Us</a></li>
+          <li><a href="#benefits">How It Works</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="mailto:info@kesarixtechnology.com">info@kesarixtechnology.com</a></li>
+          <li><a href="tel:+919274739361">+91 92747 39361</a></li>
+          <li><span>Gujarat, India</span></li>
+          <li><span>Onboarding open now</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <span>KesariX Delivery Club</span> — All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  /* ─────────────────────────────────────────────────────────────
+     GOOGLE SHEET SUBMISSION
+     Paste your Google Apps Script Web App URL below (see setup notes).
+     While it stays as the placeholder, the form runs in demo mode
+     (logs to console, shows success) so the page still works.
+  ───────────────────────────────────────────────────────────── */
+  const SHEET_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+  const form       = document.getElementById('recruitForm');
+  const successMsg = document.getElementById('successMsg');
+  const submitBtn  = document.getElementById('submitBtn');
+  const btnLabel   = document.getElementById('btnLabel');
+  const formError  = document.getElementById('formError');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    formError.style.display = 'none';
+
+    if (!form.checkValidity()) {
+      Array.from(form.elements).forEach(el => {
+        if (!el.validity.valid) {
+          el.style.borderColor = '#ef4444';
+          el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+        }
+      });
+      return;
+    }
+
+    const data = {
+      timestamp: new Date().toLocaleString('en-IN'),
+      name:    document.getElementById('name').value.trim(),
+      age:     document.getElementById('age').value,
+      contact: document.getElementById('contact').value.trim(),
+      city:    document.getElementById('city').value,
+      vehicle: document.getElementById('vehicle').value,
+    };
+
+    submitBtn.disabled = true;
+    btnLabel.textContent = 'Submitting…';
+
+    try {
+      if (SHEET_ENDPOINT && !SHEET_ENDPOINT.startsWith('PASTE_')) {
+        await fetch(SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors', // Apps Script web apps don't send CORS headers
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString(),
+        });
+        // no-cors responses are opaque; if fetch didn't throw, treat as sent
+      } else {
+        console.log('[DEMO MODE] Application captured:', data);
+      }
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      console.error('Submission failed:', err);
+      formError.style.display = 'block';
+      submitBtn.disabled = false;
+      btnLabel.textContent = 'Submit Application';
+    }
+  });
+
+  // Phone number — digits only, max 10
+  const contactInput = document.getElementById('contact');
+  contactInput.addEventListener('input', () => {
+    let val = contactInput.value.replace(/\D/g, '');
+    if (val.length > 10) val = val.slice(0, 10);
+    contactInput.value = val;
+  });
+</script>
+</body>
+</html>
