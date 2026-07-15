@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delivery Partner Recruitment — KesariX Delivery Club</title>
   <meta name="description" content="Join the KesariX Delivery Club as a delivery partner. Flexible hours, weekly payouts and fuel allowance across Gujarat & Maharashtra. Apply in under 2 minutes." />
-  <meta name="theme-color" content="#08080c" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="site-logo.ico" />
   <link rel="apple-touch-icon" href="logo.png" />
 
@@ -22,556 +22,353 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --orange: #FF6500;
-      --orange-light: #FF8534;
-      --amber: #FFB347;
-      --blue: #2b74d6;
-      --blue-light: #4d94ff;
-      --bg: #07070b;
-      --bg-card: #10101a;
-      --bg-input: #15151f;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --text: #f4f4f6;
-      --text-muted: #8f8fa2;
-      --green: #22c55e;
+      --ink: #0a0a0a;
+      --paper: #ffffff;
+      --wash: #f4f4f4;
+      --muted: #5f5f5f;
+      --line: #e0e0e0;
+      --line-strong: #cfcfcf;
+      --accent: #e75f35;   /* pulled from the delivery illustrations */
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Space Grotesk', 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
 
-    /* ── Animated aurora background ── */
-    .aurora {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .aurora span {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.55;
-      mix-blend-mode: screen;
-    }
-    .aurora .a1 {
-      width: 560px; height: 560px;
-      background: radial-gradient(circle, rgba(255,101,0,0.55), transparent 68%);
-      top: -140px; right: -120px;
-      animation: drift1 20s ease-in-out infinite;
-    }
-    .aurora .a2 {
-      width: 480px; height: 480px;
-      background: radial-gradient(circle, rgba(43,116,214,0.45), transparent 70%);
-      bottom: -160px; left: -100px;
-      animation: drift2 26s ease-in-out infinite;
-    }
-    .aurora .a3 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,140,40,0.30), transparent 70%);
-      top: 40%; left: 55%;
-      animation: drift3 22s ease-in-out infinite;
-    }
-    @keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-60px,50px) scale(1.12)} }
-    @keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(70px,-40px) scale(1.15)} }
-    @keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-50px,-60px) scale(0.9)} }
-
-    /* Stars */
-    .stars {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 25%, rgba(255,255,255,0.35) 0%, transparent 100%),
-        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 10% 70%, rgba(255,255,255,0.35) 0%, transparent 100%),
-        radial-gradient(1px 1px at 90% 75%, rgba(255,255,255,0.25) 0%, transparent 100%),
-        radial-gradient(1px 1px at 35% 90%, rgba(255,255,255,0.35) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 65% 5%, rgba(255,255,255,0.6) 0%, transparent 100%),
-        radial-gradient(1px 1px at 45% 45%, rgba(255,255,255,0.25) 0%, transparent 100%);
-    }
-
-    /* ── Layout wrappers ── */
-    .page-wrap {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
     /* ── Navbar ── */
     nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 40px;
-      border-bottom: 1px solid var(--border-subtle);
-      background: rgba(7,7,11,0.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      width: 100%;
+      border-bottom: 1px solid var(--ink);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
     }
-
-    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-
-    .logo img {
-      width: 40px; height: 40px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 12px rgba(255,101,0,0.45));
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1080px; margin: 0 auto; padding: 16px 24px;
     }
-
-    .logo-text {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      color: var(--text);
-      text-transform: uppercase;
-      line-height: 1;
-    }
-    .logo-text small {
-      display: block;
-      font-size: 8.5px;
-      letter-spacing: 0.3em;
-      color: var(--orange);
-      font-weight: 600;
-      margin-top: 4px;
-    }
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+    .logo img { width: 38px; height: 38px; object-fit: contain; }
+    .logo-text { font-size: 15px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; }
+    .logo-text small { display: block; font-size: 8.5px; letter-spacing: 0.32em; color: var(--muted); font-weight: 600; margin-top: 4px; }
 
     .nav-right { display: flex; align-items: center; gap: 22px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-link:hover { color: var(--ink); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
+      color: var(--paper); background: var(--ink); text-decoration: none;
+      border: 1px solid var(--ink); padding: 8px 15px; transition: background 0.18s, color 0.18s;
+    }
+    .nav-cta:hover { background: var(--paper); color: var(--ink); }
 
-    .nav-link {
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-muted); text-decoration: none; font-weight: 500;
-      transition: color 0.2s;
+    /* ── Hero ── */
+    .hero { position: relative; padding: 76px 0 56px; border-bottom: 1px solid var(--line); overflow: hidden; }
+    #heroCanvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+      -webkit-mask-image: radial-gradient(ellipse 90% 80% at 70% 40%, #000 30%, transparent 80%);
+      mask-image: radial-gradient(ellipse 90% 80% at 70% 40%, #000 30%, transparent 80%);
     }
-    .nav-link:hover { color: var(--text); }
+    .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+    .hero-figure { position: relative; }
+    .hero-figure img {
+      width: 100%; height: auto; display: block; aspect-ratio: 3 / 2;
+      -webkit-mask-image: radial-gradient(ellipse 80% 82% at 55% 48%, #000 68%, transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 82% at 55% 48%, #000 68%, transparent 100%);
+    }
+    .eyebrow { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 26px; }
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 88px);
+      font-weight: 900; line-height: 0.98; letter-spacing: -0.03em;
+      text-transform: uppercase; margin-bottom: 26px; max-width: 12ch;
+    }
+    .hero h1 .thin { font-weight: 400; }
+    .hero-sub { font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.65; }
+    .hero-sub strong { color: var(--ink); font-weight: 700; }
+    .hero-cta { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+    .btn-primary, .btn-ghost {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 15px 26px; text-decoration: none; border: 1px solid var(--ink); cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { background: var(--paper); color: var(--ink); }
+    .btn-ghost { background: var(--paper); color: var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
-    .nav-badge {
-      display: flex; align-items: center; gap: 7px;
-      font-size: 11px; letter-spacing: 0.09em; color: var(--green);
-      text-transform: uppercase; font-weight: 600;
-      border: 1px solid rgba(34,197,94,0.3);
-      background: rgba(34,197,94,0.06);
-      border-radius: 100px; padding: 6px 13px;
-    }
-    .nav-badge::before {
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--green); box-shadow: 0 0 10px var(--green);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.35;transform:scale(0.8)} }
+    /* ── Stats strip ── */
+    .stats-strip { background: var(--ink); color: var(--paper); }
+    .stats-strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-cell { padding: 34px 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+    .stat-cell:first-child { border-left: none; padding-left: 0; }
+    .stat-num { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    .stat-lbl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; margin-top: 10px; }
 
-    /* ── Hero section ── */
-    .hero { padding: 44px 40px 26px; max-width: 1100px; margin: 0 auto; width: 100%; }
+    /* ── Section heading ── */
+    .section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 38px; }
+    .section-num { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--accent); }
+    .section-title { font-size: clamp(22px, 3.5vw, 30px); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
 
-    .hero-meta {
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--text-muted); font-weight: 600; padding-bottom: 30px;
-    }
-    .hero-meta .avail { display: inline-flex; align-items: center; gap: 8px; }
-    .hero-meta .avail::before {
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--green); box-shadow: 0 0 10px var(--green);
-    }
+    /* ── Benefits grid ── */
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .benefit { background: var(--paper); padding: 28px 24px; }
+    .benefit-idx { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 16px; }
+    .benefit h3 { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .benefit p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
-    .hero-inner { text-align: center; max-width: 920px; margin: 0 auto; position: relative; }
-
-    /* glow behind title */
-    .hero-inner::before {
-      content: ''; position: absolute;
-      top: 30%; left: 50%; transform: translateX(-50%);
-      width: 620px; height: 340px; max-width: 90vw;
-      background: radial-gradient(ellipse at center, rgba(255,101,0,0.22), transparent 65%);
-      filter: blur(40px); z-index: -1; pointer-events: none;
-    }
-
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase;
-      color: var(--amber); font-weight: 600;
-      border: 1px solid rgba(255,101,0,0.4);
-      background: rgba(255,101,0,0.06);
-      border-radius: 100px; padding: 6px 15px; margin-bottom: 28px;
-    }
-    .hero-label::before {
-      content: ''; width: 6px; height: 6px; background: var(--orange);
-      border-radius: 50%; box-shadow: 0 0 10px var(--orange);
-    }
-
-    .hero-title { font-weight: 900; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 24px; }
-
-    .hero-title .line-sm {
-      display: block; font-size: clamp(18px, 3vw, 30px); font-weight: 600;
-      letter-spacing: 0.04em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;
-    }
-    .hero-title .serif {
-      display: block; font-family: 'Instrument Serif', Georgia, serif;
-      font-style: italic; font-weight: 400;
-      font-size: clamp(48px, 9.5vw, 112px); line-height: 0.92;
-      background: linear-gradient(180deg, #fff 15%, var(--amber) 70%, var(--orange) 115%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 4px 30px rgba(255,101,0,0.35));
-    }
-    .hero-title .outline {
-      display: block; font-size: clamp(34px, 6.5vw, 76px);
-      color: transparent; -webkit-text-stroke: 1.5px rgba(255,131,52,0.7);
-      text-transform: uppercase;
-    }
-
-    .hero-sub {
-      font-size: 16px; color: var(--text-muted); max-width: 570px;
-      margin: 0 auto; line-height: 1.65;
-    }
-    .hero-sub strong { color: var(--text); font-weight: 600; }
-
-    .hero-perks {
-      display: flex; align-items: center; justify-content: center;
-      gap: 26px; margin-top: 28px; flex-wrap: wrap;
-    }
-    .perk { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); font-weight: 500; }
-    .perk-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 8px var(--orange); }
-
-    /* ── Marquee ribbon ── */
-    .ribbon {
-      margin-top: 40px;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      background: linear-gradient(90deg, rgba(255,101,0,0.05), rgba(43,116,214,0.05));
-      overflow: hidden; padding: 13px 0;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-    .ribbon-track { display: inline-flex; align-items: center; white-space: nowrap; animation: marquee 32s linear infinite; }
-    .ribbon-track span {
-      font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--text-muted); padding: 0 26px;
-    }
-    .ribbon-track span b { color: var(--amber); font-weight: 700; }
-    .ribbon-track .star { color: var(--orange); }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-    /* ── Ad banner ── */
-    .ad-top { width: 100%; display: flex; align-items: center; justify-content: center; padding: 26px 16px 0; }
+    /* ── Ad slots ── */
+    .ad-row { display: flex; align-items: center; justify-content: center; padding: 40px 0; border-bottom: 1px solid var(--line); }
     .ad-slot {
-      background: rgba(255,101,0,0.03); border: 1px dashed rgba(255,101,0,0.16);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      color: rgba(143,143,162,0.55); font-size: 10px; letter-spacing: 0.14em;
-      text-transform: uppercase; font-weight: 500; overflow: hidden;
+      border: 1px dashed var(--line-strong); display: flex; align-items: center; justify-content: center;
+      color: #b0b0b0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; overflow: hidden;
     }
     .ad-slot-leaderboard { width: 728px; max-width: 100%; height: 90px; }
     .ad-slot-rect { width: 300px; height: 250px; }
-    .ad-slot-footer { width: 728px; max-width: 100%; height: 90px; }
 
-    /* ── Main layout ── */
-    .main {
-      display: grid; grid-template-columns: 1fr 330px; gap: 32px;
-      max-width: 1100px; margin: 40px auto 60px; padding: 0 24px;
-      width: 100%; align-items: start;
-    }
+    /* ── Apply section ── */
+    .apply-section { padding: 64px 0 72px; }
+    .apply-layout { display: grid; grid-template-columns: 1fr 300px; gap: 44px; align-items: start; }
 
-    /* ── Cards shared ── */
-    .form-card, .side-card {
-      background: linear-gradient(180deg, rgba(22,22,34,0.9), var(--bg-card));
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .side-card:hover { transform: translateY(-3px); border-color: rgba(255,101,0,0.28); box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
+    .form-card { border: 1px solid var(--ink); padding: 40px; background: var(--paper); }
+    .form-heading { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 6px; }
+    .form-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 32px; line-height: 1.55; }
 
-    /* ── Form card ── */
-    .form-card { padding: 40px; position: relative; overflow: hidden; }
-    .form-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--orange), var(--amber), transparent);
-    }
-
-    .form-heading { font-size: 24px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
-    .form-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; }
-
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .field { display: flex; flex-direction: column; gap: 7px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
     .field.full { grid-column: 1 / -1; }
-
-    label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
-
-    .input-wrap { position: relative; }
-    .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 15px; pointer-events: none; opacity: 0.8; }
+    label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
 
     input, select {
-      width: 100%; background: var(--bg-input);
-      border: 1px solid var(--border-subtle); border-radius: 10px;
-      padding: 13px 14px 13px 42px; color: var(--text);
-      font-family: inherit; font-size: 14px; font-weight: 500;
-      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
-      -webkit-appearance: none; appearance: none;
+      width: 100%; background: var(--paper); border: 1px solid var(--line-strong); border-radius: 0;
+      padding: 13px 14px; color: var(--ink); font-family: inherit; font-size: 14px; font-weight: 500;
+      outline: none; transition: border-color 0.18s; -webkit-appearance: none; appearance: none;
     }
     select {
       cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a8a9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230a0a0a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
     }
-    select option { background: #1a1a2e; color: var(--text); }
-    input:focus, select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,101,0,0.14); }
-    input::placeholder { color: rgba(143,143,162,0.5); }
-    .age-input { padding-left: 14px; }
+    select option { background: #fff; color: var(--ink); }
+    input:focus, select:focus { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+    input::placeholder { color: #a8a8a8; }
 
-    /* ── Consent ── */
-    .consent {
-      display: flex; align-items: flex-start; gap: 10px; margin-top: 20px;
-      padding: 14px 16px; background: rgba(255,101,0,0.05);
-      border: 1px solid rgba(255,101,0,0.16); border-radius: 10px;
+    .consent { display: flex; align-items: flex-start; gap: 11px; margin-top: 24px; padding: 15px 16px; background: var(--wash); border: 1px solid var(--line); }
+    .consent input[type="checkbox"] {
+      -webkit-appearance: none; appearance: none;
+      width: 18px; height: 18px; min-width: 18px; margin-top: 1px; padding: 0;
+      border: 1.5px solid var(--ink); background: var(--paper); cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.15s, border-color 0.15s; position: relative;
     }
-    .consent input[type="checkbox"] { width: 16px; height: 16px; min-width: 16px; padding: 0; cursor: pointer; accent-color: var(--orange); margin-top: 2px; }
-    .consent p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-    .consent a { color: var(--amber); text-decoration: none; }
-    .consent a:hover { text-decoration: underline; }
+    .consent input[type="checkbox"]:checked { background: var(--ink); border-color: var(--ink); }
+    .consent input[type="checkbox"]:checked::after {
+      content: ''; width: 5px; height: 9px; margin-top: -1px;
+      border: solid var(--paper); border-width: 0 2px 2px 0; transform: rotate(45deg);
+    }
+    .consent input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .consent p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .consent a { color: var(--ink); text-decoration: underline; }
 
-    /* ── Submit button ── */
     .btn-submit {
-      width: 100%; margin-top: 22px; padding: 15px 24px;
-      background: linear-gradient(100deg, var(--orange), var(--orange-light));
-      color: #fff; font-family: inherit; font-size: 14px; font-weight: 700;
-      letter-spacing: 0.06em; text-transform: uppercase; border: none;
-      border-radius: 12px; cursor: pointer; position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      transition: transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 6px 24px rgba(255,101,0,0.4);
+      width: 100%; margin-top: 24px; padding: 16px 24px;
+      background: var(--ink); color: var(--paper); font-family: inherit; font-size: 13px; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--ink); border-radius: 0; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.18s, color 0.18s;
     }
-    .btn-submit::after {
-      content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
-      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent);
-      transform: skewX(-20deg); animation: shine 3.5s ease-in-out infinite;
-    }
-    @keyframes shine { 0%{left:-60%} 45%,100%{left:130%} }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255,101,0,0.55); }
-    .btn-submit:active { transform: translateY(0); }
-    .btn-submit:disabled { opacity: 0.75; cursor: wait; }
-    .btn-arrow { font-size: 16px; position: relative; z-index: 1; }
+    .btn-submit:hover { background: var(--paper); color: var(--ink); }
+    .btn-submit:disabled { opacity: 0.55; cursor: wait; }
+    .btn-arrow { font-size: 16px; }
 
-    .form-note { margin-top: 14px; text-align: center; font-size: 11px; color: rgba(143,143,162,0.7); letter-spacing: 0.03em; }
-    .form-error { display: none; margin-top: 12px; text-align: center; font-size: 12px; color: #ff6b6b; }
+    .form-note { margin-top: 14px; text-align: center; font-size: 11px; color: #9a9a9a; letter-spacing: 0.04em; }
+    .form-error { display: none; margin-top: 12px; text-align: center; font-size: 12px; color: var(--ink); font-weight: 700; }
 
-    /* ── Success overlay ── */
-    .success-msg { display: none; text-align: center; padding: 40px 20px; }
-    .success-icon {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; color: var(--green); margin: 0 auto 18px;
-      box-shadow: 0 0 30px rgba(34,197,94,0.25);
-    }
-    .success-msg h3 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
-    .success-msg p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .success-msg { display: none; text-align: center; padding: 48px 20px; }
+    .success-icon { width: 56px; height: 56px; border: 1.5px solid var(--ink); display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 20px; }
+    .success-msg h3 { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .success-msg p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
-    /* ── Sidebar ── */
-    .sidebar { display: flex; flex-direction: column; gap: 20px; }
-    .side-card { padding: 22px; }
-    .side-card h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
-
-    .benefit-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-    .benefit-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .benefit-icon {
-      width: 28px; height: 28px; min-width: 28px; border-radius: 8px;
-      background: linear-gradient(135deg, rgba(255,101,0,0.22), rgba(255,140,40,0.1));
-      border: 1px solid rgba(255,101,0,0.2);
-      display: flex; align-items: center; justify-content: center; font-size: 13px;
-    }
-
-    .stats-row { display: flex; flex-direction: column; gap: 14px; }
-    .stat { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle); }
-    .stat:last-child { border-bottom: none; padding-bottom: 0; }
-    .stat-label { font-size: 12px; color: var(--text-muted); }
-    .stat-val {
-      font-size: 20px; font-weight: 800;
-      background: linear-gradient(180deg, var(--amber), var(--orange));
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    }
-
-    .ad-side { display: flex; align-items: center; justify-content: center; padding: 4px; }
+    /* Apply aside */
+    .apply-aside { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 90px; }
+    .aside-figure { border: 1px solid var(--ink); background: var(--wash); padding: 14px; display: flex; align-items: center; justify-content: center; }
+    .aside-figure img { width: 200px; max-width: 100%; height: auto; display: block; aspect-ratio: 1 / 1; }
+    .aside-block { border: 1px solid var(--line); padding: 24px; }
+    .aside-block h4 { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .checklist li { display: flex; gap: 11px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+    .checklist li::before { content: '—'; color: var(--ink); font-weight: 800; }
 
     /* ── Footer ── */
-    footer { border-top: 1px solid var(--border-subtle); background: rgba(7,7,11,0.9); padding: 44px 40px 26px; }
-    .footer-ad { display: flex; align-items: center; justify-content: center; margin-bottom: 40px; }
-    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 36px; max-width: 1100px; margin: 0 auto 34px; }
-    .footer-brand .logo { margin-bottom: 16px; }
-    .footer-tag { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 270px; }
-    .footer-tag strong { display: block; color: var(--text); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; margin-bottom: 8px; }
-    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .footer-col a, .footer-col span { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--amber); }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 22px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .footer-copy { font-size: 11px; letter-spacing: 0.05em; color: rgba(143,143,162,0.55); text-transform: uppercase; }
-    .footer-copy span { color: var(--orange); }
-    .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-legal a { font-size: 11px; letter-spacing: 0.05em; color: rgba(143,143,162,0.55); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-    .footer-legal a:hover { color: var(--amber); }
+    footer { border-top: 1px solid var(--ink); background: var(--paper); }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 36px; padding: 56px 0 40px; }
+    .footer-brand .logo { margin-bottom: 18px; }
+    .footer-tag { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 270px; }
+    .footer-tag strong { display: block; color: var(--ink); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; margin-bottom: 8px; }
+    .footer-col h4 { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col a, .footer-col span { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.18s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom { padding: 22px 0; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-copy { font-size: 11px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+    .footer-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-legal a { font-size: 11px; letter-spacing: 0.06em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.18s; }
+    .footer-legal a:hover { color: var(--ink); }
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .main { grid-template-columns: 1fr; }
-      .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
-      .ad-side { grid-column: 1 / -1; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 28px; }
+      .hero-copy { order: 1; }
+      .hero-figure { order: 0; max-width: 460px; }
+      .apply-layout { grid-template-columns: 1fr; }
+      .apply-aside { position: static; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
       .footer-brand { grid-column: 1 / -1; }
     }
     @media (max-width: 640px) {
-      nav { padding: 12px 18px; }
-      .nav-right { gap: 12px; }
+      .nav-inner { padding: 14px 18px; }
+      .wrap { padding: 0 18px; }
       .nav-link { display: none; }
-      .hero { padding: 30px 20px 20px; }
-      .hero-meta { font-size: 9px; letter-spacing: 0.14em; }
+      .hero { padding: 44px 0 40px; }
+      .stats-strip .wrap { grid-template-columns: 1fr 1fr; }
+      .footer-legal { gap: 16px; }
+      .stat-cell { border-left: none; padding-left: 20px !important; border-top: 1px solid rgba(255,255,255,0.15); }
+      .stat-cell:first-child, .stat-cell:nth-child(2) { border-top: none; }
+      .benefit-grid { grid-template-columns: 1fr; }
       .form-card { padding: 28px 20px; }
       .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: 1; }
-      .sidebar { grid-template-columns: 1fr; }
-      .main { padding: 0 16px; margin-top: 24px; }
-      footer { padding: 32px 20px 22px; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .aurora span, .ribbon-track, .btn-submit::after, .nav-badge::before { animation: none !important; }
     }
   </style>
 </head>
 <body>
-<div class="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
-<div class="stars"></div>
 
-<div class="page-wrap" id="top">
+<div id="top"></div>
 
-  <!-- Navbar -->
-  <nav>
+<!-- Navbar -->
+<nav>
+  <div class="nav-inner">
     <a href="#top" class="logo" aria-label="KesariX Delivery Club home">
       <img src="logo.png" alt="KesariX Delivery Club logo" />
       <span class="logo-text">KesariX<small>Delivery Club</small></span>
     </a>
     <div class="nav-right">
-      <a href="#benefits" class="nav-link">Partner Benefits</a>
-      <span class="nav-badge">Now Hiring</span>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-meta">
-      <span>Based in&nbsp;·&nbsp;Gujarat, India</span>
-      <span class="avail">Now onboarding across 10 cities</span>
-    </div>
-
-    <div class="hero-inner">
-      <div class="hero-label">Delivery Club · Partner Recruitment 2026</div>
-      <h1 class="hero-title">
-        <span class="line-sm">Ride With The</span>
-        <span class="serif">Delivery Club</span>
-        <span class="outline">Partner Network</span>
-      </h1>
-      <p class="hero-sub">
-        Earn on your own schedule. The KesariX Delivery Club is onboarding delivery partners
-        across major cities in <strong>Gujarat &amp; Maharashtra</strong> — flexible hours, weekly payouts and fuel support.
-      </p>
-      <div class="hero-perks">
-        <div class="perk"><span class="perk-dot"></span> Daily Earnings</div>
-        <div class="perk"><span class="perk-dot"></span> Flexible Hours</div>
-        <div class="perk"><span class="perk-dot"></span> Weekly Payouts</div>
-        <div class="perk"><span class="perk-dot"></span> Fuel Allowance</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marquee ribbon -->
-  <div class="ribbon">
-    <div class="ribbon-track">
-      <span><b>Daily Earnings</b></span><span class="star">✦</span>
-      <span>Weekly Payouts</span><span class="star">✦</span>
-      <span><b>Fuel Allowance</b></span><span class="star">✦</span>
-      <span>Insurance Cover</span><span class="star">✦</span>
-      <span><b>Flexible Shifts</b></span><span class="star">✦</span>
-      <span>Live App Support</span><span class="star">✦</span>
-      <span><b>Performance Bonuses</b></span><span class="star">✦</span>
-      <!-- duplicate for seamless loop -->
-      <span><b>Daily Earnings</b></span><span class="star">✦</span>
-      <span>Weekly Payouts</span><span class="star">✦</span>
-      <span><b>Fuel Allowance</b></span><span class="star">✦</span>
-      <span>Insurance Cover</span><span class="star">✦</span>
-      <span><b>Flexible Shifts</b></span><span class="star">✦</span>
-      <span>Live App Support</span><span class="star">✦</span>
-      <span><b>Performance Bonuses</b></span><span class="star">✦</span>
+      <a href="#benefits" class="nav-link">Benefits</a>
+      <a href="#apply" class="nav-cta">Apply Now →</a>
     </div>
   </div>
+</nav>
 
-  <!-- Top leaderboard ad -->
-  <div class="ad-top">
-    <!-- Google AdSense Leaderboard 728×90 — set data-ad-client / data-ad-slot before publishing -->
-    <div class="ad-slot ad-slot-leaderboard">
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:728px;max-width:100%;height:90px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="1234567890"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- Hero -->
+<header class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+    <p class="eyebrow">Partner Recruitment 2026 · Gujarat &amp; Maharashtra</p>
+    <h1>Ride With <span class="thin">The</span> Delivery Club.</h1>
+    <p class="hero-sub">
+      Earn on your own schedule. The KesariX Delivery Club is onboarding delivery partners
+      across <strong>10 cities</strong> — flexible hours, weekly payouts and fuel support.
+    </p>
+    <div class="hero-cta">
+      <a href="#apply" class="btn-primary">Apply Now <span>→</span></a>
+      <a href="#benefits" class="btn-ghost">See Benefits</a>
+    </div>
+    </div>
+    <div class="hero-figure">
+      <img src="Delivery guy out for delivery.svg" alt="Delivery partner riding a scooter, out for delivery" decoding="async" />
     </div>
   </div>
+</header>
 
-  <!-- Main grid: form + sidebar -->
-  <main class="main">
+<!-- Stats strip -->
+<section class="stats-strip">
+  <div class="wrap">
+    <div class="stat-cell"><div class="stat-num">1,200+</div><div class="stat-lbl">Active Partners</div></div>
+    <div class="stat-cell"><div class="stat-num">10</div><div class="stat-lbl">Cities Active</div></div>
+    <div class="stat-cell"><div class="stat-num">₹1,100</div><div class="stat-lbl">Avg. Daily Earnings</div></div>
+    <div class="stat-cell"><div class="stat-num">8,000+</div><div class="stat-lbl">Deliveries / Day</div></div>
+  </div>
+</section>
 
-    <!-- Form card -->
-    <div class="form-card" id="apply">
-      <div class="form-heading">Apply Now</div>
-      <p class="form-sub">Fill in your details and our onboarding team will contact you within 24 hours.</p>
+<!-- Benefits -->
+<section class="section" id="benefits">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Why Join Us</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="benefit-idx">01</div><h3>Strong Earnings</h3><p>Earn ₹20,000–₹35,000 per month with performance-based bonuses.</p></div>
+      <div class="benefit"><div class="benefit-idx">02</div><h3>Flexible Shifts</h3><p>Choose morning, evening or full-day slots — work when it suits you.</p></div>
+      <div class="benefit"><div class="benefit-idx">03</div><h3>Fuel Reimbursement</h3><p>Fuel support paid out on every completed delivery.</p></div>
+      <div class="benefit"><div class="benefit-idx">04</div><h3>Weekly Payouts</h3><p>Weekly salary plus delivery incentives, paid on time.</p></div>
+      <div class="benefit"><div class="benefit-idx">05</div><h3>Insurance Cover</h3><p>Accident and health cover active during your delivery hours.</p></div>
+      <div class="benefit"><div class="benefit-idx">06</div><h3>Live App Support</h3><p>An easy delivery app with real-time support whenever you need it.</p></div>
+    </div>
+  </div>
+</section>
 
-      <form id="recruitForm" novalidate>
-        <div class="form-grid">
+<!-- Leaderboard ad -->
+<div class="ad-row">
+  <div class="ad-slot ad-slot-leaderboard">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;max-width:100%;height:90px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1234567890"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
 
-          <div class="field">
-            <label for="name">Full Name</label>
-            <div class="input-wrap">
-              <span class="input-icon">👤</span>
+<!-- Apply -->
+<section class="apply-section" id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Apply Now</h2>
+    </div>
+
+    <div class="apply-layout">
+      <!-- Form -->
+      <div class="form-card">
+        <div class="form-heading">Partner Application</div>
+        <p class="form-sub">Fill in your details and our onboarding team will contact you within 24 hours.</p>
+
+        <form id="recruitForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name" />
             </div>
-          </div>
-
-          <div class="field">
-            <label for="age">Age</label>
-            <div class="input-wrap">
-              <input type="number" id="age" name="age" class="age-input" placeholder="18" min="18" max="55" required />
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" placeholder="18" min="18" max="55" required />
             </div>
-          </div>
-
-          <div class="field">
-            <label for="contact">Contact Number</label>
-            <div class="input-wrap">
-              <span class="input-icon">📱</span>
+            <div class="field">
+              <label for="contact">Contact Number</label>
               <input type="tel" id="contact" name="contact" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required autocomplete="tel" maxlength="10" />
             </div>
-          </div>
-
-          <div class="field">
-            <label for="city">Select City</label>
-            <div class="input-wrap">
-              <span class="input-icon">📍</span>
+            <div class="field">
+              <label for="city">Select City</label>
               <select id="city" name="city" required>
                 <option value="" disabled selected>— Choose your city —</option>
                 <option value="Surat">Surat</option>
@@ -586,12 +383,8 @@
                 <option value="Thane">Thane</option>
               </select>
             </div>
-          </div>
-
-          <div class="field full">
-            <label for="vehicle">Vehicle Type</label>
-            <div class="input-wrap">
-              <span class="input-icon">🏍️</span>
+            <div class="field full">
+              <label for="vehicle">Vehicle Type</label>
               <select id="vehicle" name="vehicle" required>
                 <option value="" disabled selected>— Select vehicle —</option>
                 <option value="bicycle">Bicycle</option>
@@ -603,78 +396,66 @@
             </div>
           </div>
 
-        </div>
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <p>
+              I agree to be contacted by the KesariX Delivery Club regarding this application.
+              I confirm the information provided is accurate. By submitting I accept the
+              <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>.
+            </p>
+          </div>
 
-        <div class="consent">
-          <input type="checkbox" id="consent" name="consent" required />
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnLabel">Submit Application</span> <span class="btn-arrow">→</span>
+          </button>
+
+          <p class="form-error" id="formError">Something went wrong. Please try again or call us directly.</p>
+          <p class="form-note">Your details are secure and used only for onboarding.</p>
+        </form>
+
+        <div class="success-msg" id="successMsg">
+          <div class="success-icon">✓</div>
+          <h3>Application Received</h3>
           <p>
-            I agree to be contacted by the KesariX Delivery Club regarding this application.
-            I confirm the information provided is accurate. By submitting I accept the
-            <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>.
+            Thank you for applying to the KesariX Delivery Club.<br />
+            Our onboarding team will reach you on your contact number within <strong>24 hours</strong>.
           </p>
         </div>
-
-        <button type="submit" class="btn-submit" id="submitBtn">
-          <span id="btnLabel">Submit Application</span> <span class="btn-arrow">→</span>
-        </button>
-
-        <p class="form-error" id="formError">Something went wrong. Please try again or call us directly.</p>
-        <p class="form-note">🔒 Your details are secure and used only for onboarding.</p>
-      </form>
-
-      <div class="success-msg" id="successMsg">
-        <div class="success-icon">✓</div>
-        <h3>Application Received!</h3>
-        <p>
-          Thank you for applying to the KesariX Delivery Club.<br />
-          Our onboarding team will reach you on your contact number within <strong>24 hours</strong>.
-        </p>
       </div>
+
+      <!-- Aside -->
+      <aside class="apply-aside">
+        <div class="aside-figure">
+          <img src="Delivery.svg" alt="Animated delivery route illustration" loading="lazy" decoding="async" />
+        </div>
+        <div class="aside-block">
+          <h4>What You Need</h4>
+          <ul class="checklist">
+            <li>A valid ID proof (Aadhaar / PAN)</li>
+            <li>A smartphone with internet</li>
+            <li>Two-wheeler or bicycle (optional)</li>
+            <li>Age between 18 and 55</li>
+          </ul>
+        </div>
+        <div class="aside-block ad-side" style="display:flex;align-items:center;justify-content:center;">
+          <div class="ad-slot ad-slot-rect">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="0987654321"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </aside>
     </div>
+  </div>
+</section>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-
-      <div class="side-card" id="benefits">
-        <h3>Why Join Us?</h3>
-        <ul class="benefit-list">
-          <li><div class="benefit-icon">💰</div><span>Earn ₹20,000–₹35,000/month with performance bonuses</span></li>
-          <li><div class="benefit-icon">⏰</div><span>Flexible shifts — morning, evening or full-day</span></li>
-          <li><div class="benefit-icon">⛽</div><span>Fuel reimbursement on every delivery</span></li>
-          <li><div class="benefit-icon">📦</div><span>Weekly salary + delivery incentives</span></li>
-          <li><div class="benefit-icon">🛡️</div><span>Insurance cover during delivery hours</span></li>
-          <li><div class="benefit-icon">📱</div><span>Easy-to-use delivery app with live support</span></li>
-        </ul>
-      </div>
-
-      <div class="side-card">
-        <h3>By the Numbers</h3>
-        <div class="stats-row">
-          <div class="stat"><span class="stat-label">Active Partners</span><span class="stat-val">1,200+</span></div>
-          <div class="stat"><span class="stat-label">Cities Active</span><span class="stat-val">10</span></div>
-          <div class="stat"><span class="stat-label">Avg. Daily Earnings</span><span class="stat-val">₹1,100</span></div>
-          <div class="stat"><span class="stat-label">Deliveries / Day</span><span class="stat-val">8,000+</span></div>
-        </div>
-      </div>
-
-      <div class="side-card ad-side">
-        <!-- Google AdSense Rectangle 300×250 -->
-        <div class="ad-slot ad-slot-rect">
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:300px;height:250px"
-               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-               data-ad-slot="0987654321"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-      </div>
-
-    </aside>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-ad">
-      <div class="ad-slot ad-slot-footer">
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="ad-row" style="border-bottom:none;padding:40px 0 8px;">
+      <div class="ad-slot ad-slot-leaderboard">
         <ins class="adsbygoogle"
              style="display:inline-block;width:728px;max-width:100%;height:90px"
              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -727,18 +508,114 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 <span>KesariX Delivery Club</span> — All rights reserved.</p>
+      <p class="footer-copy">© 2026 KesariX Delivery Club — All rights reserved.</p>
       <div class="footer-legal">
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Service</a>
         <a href="#cookies">Cookie Policy</a>
       </div>
     </div>
-  </footer>
-
-</div>
+  </div>
+</footer>
 
 <script>
+  /* ─────────────────────────────────────────────────────────────
+     HERO PARTICLE NETWORK — monochrome clustered dots + links
+  ───────────────────────────────────────────────────────────── */
+  (function () {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const hero = canvas.parentElement;
+    let w = 0, h = 0, particles = [], raf = 0, running = false;
+
+    // Fewer links/particles on small screens keeps it light on mobile.
+    const isSmall = () => window.innerWidth < 640;
+    const linkDist = () => (isSmall() ? 100 : 130);
+    function count() {
+      const cap = isSmall() ? 45 : 90;
+      return Math.min(cap, Math.floor((w * h) / 13000));
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = hero.clientWidth; h = hero.clientHeight;
+      if (!w || !h) return;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      init();
+      if (!running) draw(); // repaint a static frame after resize while paused
+    }
+
+    function init() {
+      particles = [];
+      const n = count();
+      for (let i = 0; i < n; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.6 + 0.8,
+        });
+      }
+    }
+
+    function draw() {
+      const LD = linkDist();
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < LD * LD) {
+            const a = (1 - Math.sqrt(d2) / LD) * 0.28;
+            ctx.strokeStyle = 'rgba(10,10,10,' + a + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.fillStyle = 'rgba(10,10,10,0.55)';
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function loop() { draw(); raf = requestAnimationFrame(loop); }
+    function start() { if (!running && !prefersReduced) { running = true; raf = requestAnimationFrame(loop); } }
+    function stop() { running = false; cancelAnimationFrame(raf); }
+
+    // Debounced resize
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(resize, 150); }, { passive: true });
+
+    resize();
+
+    // Only animate while the hero is on screen.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries[0].isIntersecting ? start() : stop();
+      }, { threshold: 0 }).observe(hero);
+    } else {
+      start();
+    }
+
+    if (prefersReduced) draw();
+    else start();
+  })();
+
   /* ─────────────────────────────────────────────────────────────
      GOOGLE SHEET SUBMISSION
      Paste your Google Apps Script Web App URL below (see setup notes).
@@ -760,8 +637,9 @@
     if (!form.checkValidity()) {
       Array.from(form.elements).forEach(el => {
         if (!el.validity.valid) {
-          el.style.borderColor = '#ef4444';
-          el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+          el.style.borderColor = '#0a0a0a';
+          el.style.boxShadow = 'inset 0 0 0 1px #0a0a0a';
+          el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
         }
       });
       return;
