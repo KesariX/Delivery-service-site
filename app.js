@@ -114,18 +114,79 @@ const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyXR5t0qtgyuTCWZ
   const btnLabel   = document.getElementById('btnLabel');
   const formError  = document.getElementById('formError');
 
+  /* Human-readable error text per field, based on which constraint failed */
+  function fieldMessage(el) {
+    const v = el.validity;
+    switch (el.id) {
+      case 'name':
+        return 'Please enter your full name.';
+      case 'age':
+        if (v.valueMissing) return 'Age is required.';
+        if (v.rangeUnderflow || v.rangeOverflow) return 'Age must be between 18 and 55.';
+        return 'Please enter a valid age.';
+      case 'contact':
+        if (v.valueMissing) return 'Contact number is required.';
+        if (v.patternMismatch) return 'Enter a valid 10-digit number starting with 6–9.';
+        return 'Please enter a valid contact number.';
+      case 'hub':
+        return 'Please select a hub location.';
+      case 'consent':
+        return 'Please accept to continue.';
+      default:
+        return 'This field is required.';
+    }
+  }
+
+  /* Wrapper for a field is either .field (text/select inputs) or .consent (checkbox) */
+  function wrapperFor(el) {
+    return el.closest('.field') || el.closest('.consent');
+  }
+
+  function showFieldError(el) {
+    const wrapper = wrapperFor(el);
+    if (!wrapper) return;
+    wrapper.classList.add('field-invalid');
+
+    const msgEl = wrapper.querySelector('.field-msg');
+    if (msgEl) msgEl.textContent = fieldMessage(el);
+
+    // Restart the shake animation even if it's already mid-run
+    wrapper.classList.remove('shake');
+    void wrapper.offsetWidth; // force reflow
+    wrapper.classList.add('shake');
+  }
+
+  function clearFieldError(el) {
+    const wrapper = wrapperFor(el);
+    if (!wrapper) return;
+    wrapper.classList.remove('field-invalid');
+    wrapper.classList.remove('shake');
+    const msgEl = wrapper.querySelector('.field-msg');
+    if (msgEl) msgEl.textContent = '';
+  }
+
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
     formError.style.display = 'none';
 
     if (!form.checkValidity()) {
+      let firstInvalid = null;
       Array.from(form.elements).forEach(el => {
+        if (!el.willValidate) return;
         if (!el.validity.valid) {
-          el.style.borderColor = '#0a0a0a';
-          el.style.boxShadow = 'inset 0 0 0 1px #0a0a0a';
-          el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
+          showFieldError(el);
+          if (!firstInvalid) firstInvalid = el;
+          const revalidate = () => { if (el.validity.valid) clearFieldError(el); else showFieldError(el); };
+          el.addEventListener('input', revalidate);
+          el.addEventListener('change', revalidate);
+        } else {
+          clearFieldError(el);
         }
       });
+      if (firstInvalid) {
+        wrapperFor(firstInvalid).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalid.focus({ preventScroll: true });
+      }
       return;
     }
 
