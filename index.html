@@ -132,17 +132,9 @@
     .stat-lbl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; margin-top: 10px; }
 
     /* ── Section heading ── */
-    .section { padding: 64px 0; border-bottom: 1px solid var(--line); }
     .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 38px; }
     .section-num { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--accent); }
     .section-title { font-size: clamp(22px, 3.5vw, 30px); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
-
-    /* ── Benefits grid ── */
-    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-    .benefit { background: var(--paper); padding: 28px 24px; }
-    .benefit-idx { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 16px; }
-    .benefit h3 { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 8px; }
-    .benefit p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
     /* ── Ad slots ── */
     .ad-row { display: flex; align-items: center; justify-content: center; padding: 40px 0; border-bottom: 1px solid var(--line); }
@@ -248,7 +240,6 @@
       .hero-figure { order: 0; max-width: 460px; }
       .apply-layout { grid-template-columns: 1fr; }
       .apply-aside { position: static; }
-      .benefit-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
       .footer-brand { grid-column: 1 / -1; }
     }
@@ -261,7 +252,6 @@
       .footer-legal { gap: 16px; }
       .stat-cell { border-left: none; padding-left: 20px !important; border-top: 1px solid rgba(255,255,255,0.15); }
       .stat-cell:first-child, .stat-cell:nth-child(2) { border-top: none; }
-      .benefit-grid { grid-template-columns: 1fr; }
       .form-card { padding: 28px 20px; }
       .form-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -281,7 +271,7 @@
       <span class="logo-text">KesariX<small>Delivery Club</small></span>
     </a>
     <div class="nav-right">
-      <a href="#benefits" class="nav-link">Benefits</a>
+      <a href="#apply" class="nav-link">Apply</a>
       <a href="#apply" class="nav-cta">Apply Now →</a>
     </div>
   </div>
@@ -300,7 +290,7 @@
     </p>
     <div class="hero-cta">
       <a href="#apply" class="btn-primary">Apply Now <span>→</span></a>
-      <a href="#benefits" class="btn-ghost">See Benefits</a>
+      <a href="#apply" class="btn-ghost">Join the Club</a>
     </div>
     </div>
     <div class="hero-figure">
@@ -320,24 +310,6 @@
   </div>
 </section>
 
-<!-- Benefits -->
-<section class="section" id="benefits">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2 class="section-title">Why Join Us</h2>
-    </div>
-    <div class="benefit-grid">
-      <div class="benefit"><div class="benefit-idx">01</div><h3>Strong Earnings</h3><p>Earn ₹20,000–₹35,000 per month with performance-based bonuses.</p></div>
-      <div class="benefit"><div class="benefit-idx">02</div><h3>Flexible Shifts</h3><p>Choose morning, evening or full-day slots — work when it suits you.</p></div>
-      <div class="benefit"><div class="benefit-idx">03</div><h3>Fuel Reimbursement</h3><p>Fuel support paid out on every completed delivery.</p></div>
-      <div class="benefit"><div class="benefit-idx">04</div><h3>Weekly Payouts</h3><p>Weekly salary plus delivery incentives, paid on time.</p></div>
-      <div class="benefit"><div class="benefit-idx">05</div><h3>Insurance Cover</h3><p>Accident and health cover active during your delivery hours.</p></div>
-      <div class="benefit"><div class="benefit-idx">06</div><h3>Live App Support</h3><p>An easy delivery app with real-time support whenever you need it.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- Leaderboard ad -->
 <div class="ad-row">
   <div class="ad-slot ad-slot-leaderboard">
@@ -353,7 +325,7 @@
 <section class="apply-section" id="apply">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">02</span>
+      <span class="section-num">01</span>
       <h2 class="section-title">Apply Now</h2>
     </div>
 
@@ -490,7 +462,6 @@
         <h4>Delivery Club</h4>
         <ul>
           <li><a href="#apply">Become a Partner</a></li>
-          <li><a href="#benefits">Partner Benefits</a></li>
           <li><a href="#apply">Cities We Serve</a></li>
           <li><a href="#apply">Partner FAQ</a></li>
         </ul>
@@ -500,7 +471,6 @@
         <h4>Company</h4>
         <ul>
           <li><a href="#apply">About Us</a></li>
-          <li><a href="#benefits">How It Works</a></li>
           <li><a href="#privacy">Privacy Policy</a></li>
           <li><a href="#terms">Terms of Service</a></li>
         </ul>
