@@ -1,5 +1,5 @@
 /* ───────────────────────────────────────────────────────────────
-   KesariX Delivery Club — shared page script
+   KesariX Delivery Club - shared page script
    Used by every city page (/surat, /vadodara, /bharuch, /ahmedabad).
    The city is read from the hidden #city input on each page, so the
    submission always lands in that city's sheet tab.
@@ -9,7 +9,7 @@
 const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyXR5t0qtgyuTCWZEsSeKyJESOyzTx0Gan2LAbcBfRDRehq88GM1VIZ8IBDgcDo3kx5/exec';
 
 /* ─────────────────────────────────────────────────────────────
-   HERO PARTICLE NETWORK — monochrome clustered dots + links
+   HERO PARTICLE NETWORK - monochrome clustered dots + links
 ─────────────────────────────────────────────────────────────── */
 (function () {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -224,7 +224,7 @@ const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyXR5t0qtgyuTCWZ
     }
   });
 
-  // Phone number — digits only, max 10
+  // Phone number - digits only, max 10
   const contactInput = document.getElementById('contact');
   if (contactInput) {
     contactInput.addEventListener('input', () => {

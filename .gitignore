@@ -1,0 +1,4 @@
+# Source hub data — contains hub-staff names & phone numbers, keep out of the public repo
+*.xlsx
+*.xls
+*.csv
